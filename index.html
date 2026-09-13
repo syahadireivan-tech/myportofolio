@@ -1,0 +1,2505 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Reivan</title>
+
+    <style>
+
+        /* =========================
+           RESET & VARIABLES
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --navy: #0b1f33;
+            --navy2: #102d47;
+            --blue: #2563eb;
+            --gold: #d6a84f;
+            --white: #ffffff;
+            --light: #f5f7fa;
+            --gray: #667085;
+            --dark: #172033;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(11,31,51,.94);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .nav-container {
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d9e1ea;
+            font-size: .92rem;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .menu {
+            display: none;
+            color: white;
+            font-size: 1.7rem;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 80px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(11,31,51,.97),
+                    rgba(16,45,71,.93)
+                );
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero small {
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 1.05;
+            margin: 15px 0 20px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero h2 {
+            color: #dce8f4;
+            font-weight: 400;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #b7c5d5;
+            max-width: 620px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 7px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,.25);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+
+        /* PROFILE */
+
+        .profile {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-photo {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    border: 5px solid #d4af37;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+        .profile-box {
+            width: 330px;
+            height: 390px;
+
+            border-radius: 180px 180px 20px 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #183b5c,
+                    #0c243b
+                );
+
+            border: 1px solid rgba(255,255,255,.15);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .profile-circle {
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background: var(--gold);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 6rem;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.3);
+        }
+
+        .profile-label {
+            position: absolute;
+
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+
+            background: rgba(255,255,255,.08);
+
+            backdrop-filter: blur(10px);
+
+            border: 1px solid rgba(255,255,255,.1);
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .profile-label span {
+            color: var(--gold);
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+
+        .section-heading small {
+            color: var(--blue);
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin: 8px 0;
+        }
+
+        .section-heading p {
+            color: var(--gray);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            margin-top: 25px;
+
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .about-card {
+            padding: 35px;
+
+            background: var(--light);
+
+            border-radius: 15px;
+
+            border: 1px solid #e6eaf0;
+        }
+
+        .about-card h3 {
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-item {
+            background: white;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--navy);
+        }
+
+        .info-item span {
+            color: var(--gray);
+            font-size: .9rem;
+        }
+
+
+        /* =========================
+           INTEREST
+        ========================= */
+
+        #interest {
+            background: var(--light);
+        }
+
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .interest-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            border: 1px solid #e6eaf0;
+
+            transition: .3s;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 40px rgba(11,31,51,.08);
+        }
+
+        .interest-icon {
+            width: 55px;
+            height: 55px;
+
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #edf4ff;
+
+            font-size: 1.6rem;
+
+            margin-bottom: 18px;
+        }
+
+        .interest-card h3 {
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .interest-card p {
+            color: var(--gray);
+            font-size: .92rem;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience {
+            max-width: 850px;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+
+            gap: 35px;
+
+            padding: 30px 0;
+
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .experience-year {
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+        .experience-content h3 {
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .experience-content h4 {
+            color: var(--gold);
+            font-size: .9rem;
+            margin-bottom: 10px;
+        }
+
+        .experience-content p {
+            color: var(--gray);
+        }
+
+
+        /* =========================
+           ACHIEVEMENT
+        ========================= */
+
+        #achievement {
+            background: var(--navy);
+            color: white;
+        }
+
+        #achievement .section-heading h2 {
+            color: white;
+        }
+
+        #achievement .section-heading p {
+            color: #aebdcd;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .achievement {
+            padding: 30px;
+
+            border: 1px solid rgba(255,255,255,.1);
+
+            background: rgba(255,255,255,.04);
+
+            border-radius: 12px;
+        }
+
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .achievement h3 {
+            margin: 5px 0;
+        }
+
+        .achievement p {
+            color: #aebdcd;
+            font-size: .9rem;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .education-card {
+            padding: 30px;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 14px;
+
+            transition: .3s;
+        }
+
+        .education-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .education-card small {
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+        .education-card h3 {
+            color: var(--navy);
+            margin: 8px 0;
+        }
+
+        .education-card p {
+            color: var(--gray);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #contact {
+            background: var(--light);
+        }
+
+        .contact {
+            background: var(--navy);
+
+            padding: 60px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .contact h2 {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            color: #b7c5d5;
+            max-width: 600px;
+            margin: auto auto 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 11px 18px;
+
+            border: 1px solid rgba(255,255,255,.2);
+
+            border-radius: 7px;
+
+            transition: .3s;
+        }
+
+        .contact-link:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #071522;
+            color: #8d9aaa;
+            text-align: center;
+            padding: 25px;
+            font-size: .9rem;
+        }
+
+
+        /* =========================
+           SCROLL ANIMATION
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: .8s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 850px) {
+
+            .hero,
+            .about,
+            .education {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .profile {
+                order: -1;
+            }
+
+            .profile-box {
+                width: 280px;
+                height: 330px;
+            }
+
+            .profile-circle {
+                width: 180px;
+                height: 180px;
+            }
+
+            .interest-grid,
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 75px;
+                right: 5%;
+
+                width: 220px;
+
+                padding: 20px;
+
+                background: var(--navy);
+
+                border-radius: 10px;
+
+                flex-direction: column;
+
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu {
+                display: block;
+            }
+        }
+
+        @media(max-width: 550px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .section-heading h2 {
+                font-size: 2rem;
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .contact {
+                padding: 40px 20px;
+            }
+
+            .contact h2 {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <div class="container nav-container">
+
+        <a href="#home" class="logo">
+            REIVAN SYAHADI<span>.</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#home">Beranda</a>
+            </li>
+
+            <li>
+                <a href="#about">Tentang</a>
+            </li>
+
+            <li>
+                <a href="#interest">Minat</a>
+            </li>
+
+            <li>
+                <a href="#experience">Pengalaman</a>
+            </li>
+
+            <li>
+                <a href="#education">Pendidikan</a>
+            </li>
+
+            <li>
+                <a href="#contact">Kontak</a>
+            </li>
+
+        </ul>
+
+        <div class="menu" onclick="toggleMenu()">
+            ☰
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section id="home">
+
+    <div class="container hero">
+
+        <div class="hero-text reveal">
+
+            <small>
+                MAHASISWA ADMINISTRASI NEGARA
+            </small>
+
+            <h1>
+                Halo, saya
+                <span>Reivan Syahadi</span>
+            </h1>
+
+            <h2>
+                Mahasiswa • Pembelajar • Future Public Administrator
+            </h2>
+
+            <p>
+                Saya adalah mahasiswa Administrasi Negara yang
+                memiliki ketertarikan pada pemerintahan, pelayanan
+                publik, kebijakan publik, organisasi, serta
+                pengembangan diri.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="#about"
+                    class="btn btn-primary">
+                    Kenali Saya
+                </a>
+
+                <a
+                    href="#contact"
+                    class="btn btn-secondary">
+                    Hubungi Saya
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile reveal">
+
+            <div class="profile-box">
+
+                <div class="profile-circle">
+                    <img src="foto/profil.jpg" 
+                     alt="Foto Profil Saya" 
+                      class="profile-photo">
+                </div>
+
+                <div class="profile-label">
+
+                    <strong>
+                        Reivan Syahadi
+                    </strong>
+
+                    <br>
+
+                    <span>
+                        State Administration Student
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <small>
+                TENTANG SAYA
+            </small>
+
+            <h2>
+                Mengenal Saya Lebih Dekat
+            </h2>
+
+            <p>
+                Bukan hanya tentang nilai akademik,
+                tetapi juga tentang pengalaman dan proses berkembang.
+            </p>
+
+        </div>
+
+
+        <div class="about">
+
+            <div class="about-text reveal">
+
+                <p>
+                    Sebagai mahasiswa Administrasi Negara,
+                    saya tertarik memahami bagaimana sebuah
+                    organisasi pemerintahan bekerja dan bagaimana
+                    kebijakan dapat memberikan dampak bagi masyarakat.
+                </p>
+
+                <p>
+                    Saya senang terlibat dalam kegiatan akademik,
+                    organisasi, kepanitiaan, maupun kegiatan sosial
+                    yang dapat meningkatkan kemampuan komunikasi,
+                    kepemimpinan, dan kerja sama.
+                </p>
+
+                <div class="quote">
+
+                    "Belajar memahami masyarakat,
+                    berkembang untuk memberikan kontribusi."
+
+                </div>
+
+            </div>
+
+
+            <div class="about-card reveal">
+
+                <h3>
+                    Profil Singkat
+                </h3>
+
+                <div class="info">
+
+                    <div class="info-item">
+
+                        <strong>
+                            🎓 Status
+                        </strong>
+
+                        <span>
+                            Mahasiswa
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            🏛️ Program Studi
+                        </strong>
+
+                        <span>
+                            Administrasi Negara
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            📍 Domisili
+                        </strong>
+
+                        <span>
+                            Sambas, Indonesia
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            🎯 Fokus
+                        </strong>
+
+                        <span>
+                            Public Administration
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INTEREST
+========================= -->
+
+<section id="interest">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <small>
+                BIDANG YANG SAYA MINATI
+            </small>
+
+            <h2>
+                Hal yang Saya Pelajari
+            </h2>
+
+            <p>
+                Beberapa bidang yang menjadi ketertarikan
+                saya selama menempuh pendidikan.
+            </p>
+
+        </div>
+
+
+        <div class="interest-grid">
+
+
+            <div class="interest-card reveal">
+
+                <div class="interest-icon">
+                    🏛️
+                </div>
+
+                <h3>
+                    Pemerintahan
+                </h3>
+
+                <p>
+                    Mempelajari bagaimana lembaga pemerintahan
+                    menjalankan fungsi administrasi dan pelayanan
+                    kepada masyarakat.
+                </p>
+
+            </div>
+
+
+            <div class="interest-card reveal">
+
+                <div class="interest-icon">
+                    📑
+                </div>
+
+                <h3>
+                    Kebijakan Publik
+                </h3>
+
+                <p>
+                    Tertarik memahami proses perumusan,
+                    implementasi, dan evaluasi kebijakan publik.
+                </p>
+
+            </div>
+
+
+            <div class="interest-card reveal">
+
+                <div class="interest-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Pelayanan Publik
+                </h3>
+
+                <p>
+                    Memahami bagaimana pelayanan publik
+                    dapat menjadi lebih efektif dan berorientasi
+                    kepada masyarakat.
+                </p>
+
+            </div>
+
+
+            <div class="interest-card reveal">
+
+                <div class="interest-icon">
+                    👥
+                </div>
+
+                <h3>
+                    Organisasi
+                </h3>
+
+                <p>
+                    Mengembangkan kemampuan bekerja dalam tim,
+                    berkomunikasi, dan berorganisasi.
+                </p>
+
+            </div>
+
+
+            <div class="interest-card reveal">
+
+                <div class="interest-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Administrasi
+                </h3>
+
+                <p>
+                    Mempelajari pengelolaan administrasi,
+                    manajemen organisasi, dan proses birokrasi.
+                </p>
+
+            </div>
+
+
+            <div class="interest-card reveal">
+
+                <div class="interest-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Pengembangan Diri
+                </h3>
+
+                <p>
+                    Terus meningkatkan kemampuan komunikasi,
+                    kepemimpinan, berpikir kritis, dan problem solving.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="experience-section">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+        <small>
+                PENGALAMAN YANG SAYA IKUTI
+            </small>
+
+            <h2>
+                Pengalaman
+            </h2>
+
+            <p>
+                Beberapa pengalaman yang telah saya jalani selama masa pendidikan.
+            </p>
+    </div>
+
+    <div class="experience-grid">
+
+        <!-- PENGALAMAN 1 -->
+        <div class="experience-card reveal">
+            <div class="experience-image">
+                <img src="foto/osis.JPG">
+                     alt="Pengalaman Organisasi siswa"
+                     onerror="this.src='https://placehold.co/800x500?text=osis'">
+            </div>
+
+            <div class="experience-content">
+                <span class="experience-date">2024 - Sekarang</span>
+
+                <h3>Organisasi Siswa</h3>
+
+                <h4>Anggota / Pengurus</h4>
+
+                <p>
+                    Berperan aktif dalam kegiatan organisasi siswa
+                    dan membantu menjalankan berbagai program kerja.
+                </p>
+
+                <button class="detail-btn" onclick="openExperience(1)">
+                    Lihat Selengkapnya <span>→</span>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- PENGALAMAN 2 -->
+        <div class="experience-card reveal">
+            <div class="experience-image">
+                <img src="foto/kepanitiaan.jpg"
+                     alt="Pengalaman Kepanitiaan"
+                     onerror="this.src='https://placehold.co/800x500?text=Foto+Kepanitiaan'">
+            </div>
+
+            <div class="experience-content">
+                <span class="experience-date">2024</span>
+
+                <h3>Kepanitiaan Sekolah</h3>
+
+                <h4>Staff Kepanitiaan</h4>
+
+                <p>
+                    Terlibat dalam persiapan dan pelaksanaan berbagai
+                    kegiatan serta acara di lingkungan sekolah.
+                </p>
+
+                <button class="detail-btn" onclick="openExperience(2)">
+                    Lihat Selengkapnya <span>→</span>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- PENGALAMAN 3 -->
+        <div class="experience-card reveal">
+            <div class="experience-image">
+                <img src="foto/akademik.jpg"
+                     alt="Pengalaman Kegiatan Akademik"
+                     onerror="this.src='https://placehold.co/800x500?text=Foto+Akademik'">
+            </div>
+
+            <div class="experience-content">
+                <span class="experience-date">2024 - Sekarang</span>
+
+                <h3>Kegiatan Akademik</h3>
+
+                <h4>Siswa SMKN 1 Semparuk</h4>
+
+                <p>
+                    Mengikuti berbagai kegiatan akademik, diskusi,
+                    presentasi dan pengembangan wawasan.
+                </p>
+
+                <button class="detail-btn" onclick="openExperience(3)">
+                    Lihat Selengkapnya <span>→</span>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- PENGALAMAN 4 - TERSEMBUNYI -->
+        <div class="experience-card experience-hidden">
+            <div class="experience-image">
+                <img src="foto/sosial.jpg"
+                     alt="Pengalaman Kegiatan Sosial"
+                     onerror="this.src='https://placehold.co/800x500?text=Foto+Sosial'">
+            </div>
+
+            <div class="experience-content">
+                <span class="experience-date">2024</span>
+
+                <h3>Organisasi Remaja Masjid</h3>
+
+                <h4>Pengurus / Peserta</h4>
+
+                <p>
+                    Berpartisipasi dalam kegiatan Keagamaan dan aktivitas
+                    yang memberikan manfaat bagi masyarakat.
+                </p>
+
+                <button class="detail-btn" onclick="openExperience(4)">
+                    Lihat Selengkapnya <span>→</span>
+                </button>
+            </div>
+        </div>
+
+         <div class="experience-card experience-hidden">
+            <div class="experience-image">
+                <img src="foto/lomba.jpg"
+                     alt="Pengalaman Lomba Sekolah"
+                     onerror="this.src='https://placehold.co/800x500?text=Foto+Sosial'">
+            </div>
+
+            <div class="experience-content">
+                <span class="experience-date">2024-2025</span>
+
+                <h3>Prestasi di Sekolah</h3>
+
+                <h4>Pemenang / Peserta</h4>
+
+                <p>
+                    Berpartisipasi dalam kegiatan lomba-lomba yang diadakan didalam maupun diluar sekolah untuk mengharumkan nama sekolah.
+                </p>
+
+                <button class="detail-btn" onclick="openExperience(5)">
+                    Lihat Selengkapnya <span>→</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="experience-card experience-hidden">
+            <div class="experience-image">
+                <img src="foto/lombaa.jpg"
+                     alt="Pengalaman Lomba diluar Sekolah"
+                     onerror="this.src='https://placehold.co/800x500?text=Foto+Sosial'">
+            </div>
+
+            <div class="experience-content">
+                <span class="experience-date">2024-2025</span>
+
+                <h3>Lomba Diluar Lingkup Sekolah</h3>
+
+                <h4>Pemenang / Peserta</h4>
+
+                <p>
+                    Berpartisipasi dalam kegiatan lomba-lomba yang diadakan Diluar Sekolah.
+                </p>
+
+                <button class="detail-btn" onclick="openExperience(6)">
+                    Lihat Selengkapnya <span>→</span>
+                </button>
+            </div>
+        </div>
+
+             <div class="experience-card experience-hidden">
+            <div class="experience-image">
+                <img src="foto/acara.jpg"
+                     alt="Pengalaman Sekolah"
+                     onerror="this.src='https://placehold.co/800x500?text=Foto+Sosial'">
+            </div>
+
+            <div class="experience-content">
+                <span class="experience-date">2024-2025</span>
+
+                <h3>Pengisi Acara Sekolah
+                </h3>
+
+                <h4>Pengisi Acara</h4>
+
+                <p>
+                    Berpartisipasi dalam Acara-acara Sekolah.
+                </p>
+
+                <button class="detail-btn" onclick="openExperience(7)">
+                    Lihat Selengkapnya <span>→</span>
+                </button>
+            </div>
+        </div>
+         <div class="experience-card experience-hidden">
+            <div class="experience-image">
+                <img src="foto/acaraa.jpg"
+                     alt="Pengalaman Sekolah"
+                     onerror="this.src='https://placehold.co/800x500?text=Foto+Sosial'">
+            </div>
+
+            <div class="experience-content">
+                <span class="experience-date">2022-2025</span>
+
+                <h3>Pengisi Acara Masyarakat
+                </h3>
+
+                <h4>Pengisi Acara</h4>
+
+                <p>
+                    Berpartisipasi dalam Acara-acara Masyarakat.
+                </p>
+
+                <button class="detail-btn" onclick="openExperience(8)">
+                    Lihat Selengkapnya <span>→</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- TOMBOL LIHAT LEBIH BANYAK -->
+    <div class="more-experience">
+        <button id="showMoreBtn" onclick="showMoreExperience()">
+            Lihat Lebih Banyak
+            <span>↓</span>
+        </button>
+    </div>
+
+</section>
+
+
+<!-- ================= MODAL DETAIL PENGALAMAN ================= -->
+<div id="experienceModal" class="experience-modal">
+
+    <div class="modal-box">
+
+        <button class="modal-close" onclick="closeExperience()">
+            &times;
+        </button>
+
+        <img id="modalImage"
+             src=""
+             alt="Foto pengalaman"
+             class="modal-image">
+
+        <div class="modal-content">
+
+            <span id="modalDate" class="modal-date"></span>
+
+            <h2 id="modalTitle"></h2>
+
+            <h4 id="modalPosition"></h4>
+
+            <p id="modalDescription"></p>
+
+            <h3>Peran & Tanggung Jawab</h3>
+
+            <ul id="modalResponsibilities"></ul>
+
+            <div class="skill-tags" id="modalSkills"></div>
+
+        </div>
+
+    </div>
+
+    
+
+</div>
+
+
+<style>
+
+/* ================= EXPERIENCE ================= */
+
+.experience-section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title span {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+    margin: 10px 0;
+    color: var(--navy);
+}
+
+.section-title p {
+    color: #777;
+}
+
+
+/* GRID */
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+
+/* CARD */
+
+.experience-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.35s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.14);
+}
+
+
+/* FOTO */
+
+.experience-image {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.experience-card:hover .experience-image img {
+    transform: scale(1.08);
+}
+
+
+/* CONTENT */
+
+.experience-content {
+    padding: 25px;
+}
+
+.experience-date {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.experience-content h3 {
+    font-size: 21px;
+    color: var(--navy);
+    margin-bottom: 5px;
+}
+
+.experience-content h4 {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.experience-content p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+/* DETAIL BUTTON */
+
+.detail-btn {
+    border: none;
+    background: transparent;
+    color: var(--gold);
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.detail-btn span {
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+.detail-btn:hover {
+    color: var(--navy);
+}
+
+.detail-btn:hover span {
+    margin-left: 10px;
+}
+
+
+/* PENGALAMAN TAMBAHAN DISEMBUNYIKAN */
+
+.experience-hidden {
+    display: none;
+}
+
+
+/* TOMBOL LIHAT LEBIH BANYAK */
+
+.more-experience {
+    text-align: center;
+    margin-top: 45px;
+}
+
+#showMoreBtn {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+#showMoreBtn span {
+    margin-left: 8px;
+    transition: 0.3s;
+}
+
+#showMoreBtn:hover {
+    background: var(--gold);
+    transform: translateY(-3px);
+}
+
+#showMoreBtn:hover span {
+    transform: translateY(3px);
+}
+
+
+/* ================= MODAL ================= */
+
+.experience-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    z-index: 9999;
+}
+
+.experience-modal.active {
+    display: flex;
+}
+
+.modal-box {
+    background: white;
+    width: 850px;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 22px;
+    position: relative;
+    animation: modalShow 0.3s ease;
+}
+
+@keyframes modalShow {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* MODAL FOTO */
+
+.modal-image {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* MODAL CONTENT */
+
+.modal-content {
+    padding: 35px;
+}
+
+.modal-date {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.modal-content h2 {
+    color: var(--navy);
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.modal-content h4 {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.modal-content h3 {
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.modal-content ul {
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.modal-content li {
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+
+/* TAG SKILL */
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background: #f3f5f8;
+    color: var(--navy);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* CLOSE */
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    color: var(--navy);
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    background: var(--gold);
+    color: white;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experience-card:nth-child(3) {
+        display: block;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .experience-section {
+        padding: 70px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-image {
+        height: 200px;
+    }
+
+    .modal-image {
+        height: 220px;
+    }
+
+    .modal-content {
+        padding: 25px;
+    }
+
+    .modal-content h2 {
+        font-size: 24px;
+    }
+}
+
+</style>
+
+
+<script>
+
+/* ================= DATA PENGALAMAN ================= */
+
+const experiences = {
+
+    1: {
+        image: "foto/osis.JPG",
+        date: "2024 - Sekarang",
+        title: "Organisasi Siswa",
+        position: "Anggota / Pengurus",
+
+        description:
+            "Saya aktif berpartisipasi dalam organisasi siswa dan terlibat dalam berbagai kegiatan serta program kerja organisasi.",
+
+        responsibilities: [
+            "Berpartisipasi dalam kegiatan organisasi",
+            "Membantu menyusun dan menjalankan program kerja",
+            "Bekerja sama dengan anggota lainnya",
+            "Mengikuti rapat dan kegiatan internal organisasi"
+        ],
+
+        skills: [
+            "Kerja Sama",
+            "Komunikasi",
+            "Organisasi",
+            "Osis",
+            "Rohis",
+            "Kader Adiwiyata",
+            "Leadership"
+        ]
+    },
+
+
+    2: {
+        image: "foto/kepanitiaan.jpg",
+        date: "2023-2025",
+        title: "Kepanitiaan Acara Sekolah",
+        position: "Staff Kepanitiaan",
+
+        description:
+            "Terlibat dalam kepanitiaan berbagai kegiatan sekolah, mulai dari tahap persiapan hingga pelaksanaan acara.",
+
+        responsibilities: [
+            "Mempersiapkan kebutuhan kegiatan",
+            "Berkoordinasi dengan anggota panitia",
+            "Membantu pelaksanaan acara",
+            "Menyelesaikan tugas sesuai pembagian kerja"
+        ],
+
+        skills: [
+            "Teamwork",
+            "Manajemen Waktu",
+            "Komunikasi",
+            "Problem Solving"
+        ]
+    },
+
+
+    3: {
+        image: "foto/akademik.jpg",
+        date: "2023 - 2026",
+        title: "Kegiatan Akademik",
+        position: "Siswa SMKN 1 Semparuk",
+
+        description:
+            "Mengikuti berbagai kegiatan akademik yang membantu meningkatkan pemahaman , Ilmu pengetahuan, dan Wawasan",
+
+        responsibilities: [
+            "Mengikuti diskusi akademik",
+            "Mengerjakan tugas individu dan kelompok",
+            "Melakukan presentasi",
+            "Mengembangkan kemampuan berpikir kritis"
+        ],
+
+        skills: [
+            "Public Speaking",
+            "Critical Thinking",
+            "Presentasi"
+        ]
+    },
+
+
+    4: {
+        image: "foto/sosial.jpg",
+        date: "2024",
+        title: "Organisasi Remaja Masjid",
+        position: "Peserta / Pengurus",
+
+        description:
+            "Berpartisipasi dalam berbagai kegiatan Remaja Masjid yang memberikan pengalaman dalam berinteraksi dan bekerja bersama masyarakat.",
+
+        responsibilities: [
+            "Mengikuti kegiatan sosial",
+            "Berinteraksi dengan masyarakat",
+            "Ikut dalam kegiatan Keagamaan",
+            "Bekerja sama dengan peserta lainnya"
+        ],
+
+        skills: [
+            "Empati",
+            "Komunikasi",
+            "Kerja Sama",
+            "Islamic",
+            "Sosial"
+        ]
+    },
+
+
+     5: {
+        image: "foto/lomba.jpg",
+        date: "2024 - 2025",
+        title: "Prestasi di Sekolah",
+        position: "Pemenang / Peserta",
+
+        description:
+            "Berpartisipasi dalam berbagai kegiatan lomba-lomba didalam maupun diluar sekolah untuk mengarumkan nama sekolah"
+            ,
+
+        responsibilities: [
+            "Mengikuti kegiatan sosial",
+            "Berinteraksi dengan masyarakat",
+            "Ikut dalam kegiatan Keagamaan",
+            "Bekerja sama dengan peserta lainnya"
+        ],
+        
+
+        skills: [
+            "Juara 2 Mathematics on the paper (MOP) Se-kalimantan barat Diselenggarakan Oleh FMIPA Untan 2025",
+            "Juara 3 Syarhil Quran Se-singbebas dalam rangka Manicsa Fest 9 Diselenggarakan Oleh MAN Insan Cendikia Sambas 2025",
+            "Juara 1 Baca Puisi dalam rangka bulan Bahasa SMKN 1 Semparuk 2025",
+            "Juara 1 Kelas 10 Semester Ganjil Dikelas X Rpl 1",
+            "Juara 2 Kelas 10 Semester Ganjil Dikelas X Rpl 1",
+            "Juara 2 Kelas 11 Semester Ganjil Dikelas XI Rpl 1",
+            "Juara 2 Kelas 11 Semester Ganjil Dikelas XI Rpl 1",
+            "Juara 2 Kelas 12 Semester Ganjil Dikelas XII Rpl 1",
+            "Peraih Nilai Terbaik 2 Mata Pelajaran Matematika 2025"
+            
+        ]
+    },
+
+     6: {
+        image: "foto/lombaa.jpg",
+        date: "2025",
+        title: "Lomba diluar lingkup sekolah",
+        position: "Pemenang / Peserta",
+
+        description:
+            "Berpartisipasi dalam berbagai kegiatan lomba-lomba diluar sekolah."
+            ,
+
+        responsibilities: [
+            "Mengikuti Berbagai Perlombaan",
+            "Berinteraksi dengan masyarakat",
+            "Ikut dalam kegiatan",
+            "Bekerja sama dengan rekan se-tim"
+        ],
+        
+
+        skills: [
+            "Juara 2 MTQ ke-32 Kecamatan Pemangkat cabang Syarhil Qur'an di Desa Harapan 2025",
+            "Juara 2 MTQ ke-23 Kecamatan Semparuk cabang Syarhil Qur'an di Desa Sepadu 2025",
+            "Juara Harapan 1 MTQ ke-10 Kecamatan Sambas cabang Syarhil Qur'an di Desa Pendawan 2025",
+            
+        ]
+    },
+
+     7: {
+        image: "foto/acara.jpg",
+        date: "2023-2025",
+        title: "Pengisi Acara Sekolah",
+        position: "Pengisi Acara",
+
+        description:
+            "Berpartisipasi dalam berbagai Acara di sekolah selaku pengisi acara."
+            ,
+
+        responsibilities: [
+            "Mengikuti Berbagai Acara Sekolah",
+            "Berinteraksi dengan Seluruh Peserta",
+            "Ikut dalam kegiatan",
+            "Bekerja sama"
+        ],
+        
+
+        skills: [
+            "Master Of Ceremony Bahasa Indonesia Expo SMKN 1 Semparuk Tahun 2024",
+            "Pembaca Ayat Suci Al-Quran Pembukaan Expo SMKN 1 Semparuk Tahun 2025",
+            "Anggota Tim Drum Band Pembukaan Expo SMKN 1 Semparuk Tahun 2023",
+            "Master Of Ceremony Bahasa Inggris Pembukaan MPLS SMKN 1 Semparuk Tahun 2024",
+            "Master Of Ceremony Penutupan MPLS SMKN 1 Semparuk Tahun 2024",
+            "Master Of Ceremony PKSS SMKN 1 Semparuk Tahun 2024",
+            "Master Of Ceremony Gelar Karya SMKN 1 Semparuk Tahub 2025",
+            "Master Of Ceremony Hardiknas SMKN 1 Semparuk Tahun 2025",
+            "Moderator Debat Calon Ketua Osis SMKN 1 Semparuk Tahun 2024",
+            "Perwakilan Kader Adiwiyata Dalam Verifikasi Adiwiyata Sekolah SMKN 1 Semparuk 2024",
+            "Model Busana Seragam SMKN 1 Semparuk Pada MPLS SMKN 1 Semparuk 2024",
+            "Model Busana Seragam SMKN 1 Semparuk Pada MPLS SMKN 1 Semparuk 2025",
+            "Master Of Ceremony Pembagian Hadiah Class meeting Tahun 2023",
+            
+        ]
+    },
+
+    8: {
+        image: "foto/acaraa.jpg",
+        date: "2023-2025",
+        title: "Pengisi Acara diluar Sekolah",
+        position: "Pengisi Acara",
+
+        description:
+            "Berpartisipasi dalam berbagai Acara diluar sekolah selaku pengisi acara."
+            ,
+
+        responsibilities: [
+            "Mengikuti Berbagai Acara Masyarakat",
+            "Berinteraksi dengan Masyarakat",
+            "Ikut dalam kegiatan",
+            "Bekerja sama dengan Masyarakat"
+        ],
+        
+
+        skills: [
+            "Master Of Ceremony Acara Keagaaman Masjid Ummatul Islam 2024",
+            "Pembaca Ayat Suci Al-Qur'an Acara Keagaaman Surau Al-Amin 2025",
+            "Pembaca Sari Tilawah Acara Keagaaman Surau Al-Amin 2022"
+            
+        ]
+    }
+    
+
+    
+
+};
+
+
+/* ================= BUKA MODAL ================= */
+
+function openExperience(id) {
+
+    const data = experiences[id];
+
+    document.getElementById("modalImage").src = data.image;
+    document.getElementById("modalDate").textContent = data.date;
+    document.getElementById("modalTitle").textContent = data.title;
+    document.getElementById("modalPosition").textContent = data.position;
+    document.getElementById("modalDescription").textContent = data.description;
+
+
+    /* Responsibilities */
+
+    const responsibilityList =
+        document.getElementById("modalResponsibilities");
+
+    responsibilityList.innerHTML = "";
+
+    data.responsibilities.forEach(item => {
+
+        const li = document.createElement("li");
+
+        li.textContent = item;
+
+        responsibilityList.appendChild(li);
+
+    });
+
+
+    /* Skills */
+
+    const skillContainer =
+        document.getElementById("modalSkills");
+
+    skillContainer.innerHTML = "";
+
+    data.skills.forEach(skill => {
+
+        const span = document.createElement("span");
+
+        span.className = "skill-tag";
+
+        span.textContent = skill;
+
+        skillContainer.appendChild(span);
+
+    });
+
+
+    document
+        .getElementById("experienceModal")
+        .classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* ================= TUTUP MODAL ================= */
+
+function closeExperience() {
+
+    document
+        .getElementById("experienceModal")
+        .classList.remove("active");
+
+    document.body.style.overflow = "auto";
+}
+
+
+/* Klik area luar modal */
+
+document
+    .getElementById("experienceModal")
+    .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+            closeExperience();
+        }
+
+    });
+
+
+/* Tombol ESC */
+
+document.addEventListener("keydown", function(e) {
+
+    if (e.key === "Escape") {
+        closeExperience();
+    }
+
+});
+
+
+/* ================= LIHAT LEBIH BANYAK ================= */
+
+
+function showMoreExperience() {
+
+    const hiddenExperiences =
+        document.querySelectorAll(".experience-hidden");
+
+    hiddenExperiences.forEach(card => {
+        card.style.display = "block";
+    });
+
+    const button =
+        document.getElementById("showMoreBtn");
+
+    button.innerHTML =
+        'Sembunyikan <span>↑</span>';
+
+    button.onclick = function() {
+
+        hiddenExperiences.forEach(card => {
+            card.style.display = "none";
+        });
+
+        button.innerHTML =
+            'Lihat Lebih Banyak <span>↓</span>';
+
+        button.onclick = showMoreExperience;
+
+        // OTOMATIS SCROLL KE AKTIVITAS
+        document.getElementById("achievement").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    };
+}
+</script>
+```
+
+
+<!-- =========================
+     ACHIEVEMENT
+========================= -->
+
+<section id="achievement">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <small>
+                AKTIVITAS
+            </small>
+
+            <h2>
+                Perjalanan Saya
+            </h2>
+
+        </div>
+
+
+        <div class="achievement-grid">
+
+
+            <div class="achievement reveal">
+
+                <div class="achievement-number">
+                    03+
+                </div>
+
+                <h3>
+                    Organisasi
+                </h3>
+
+                <p>
+                    Pengalaman dalam berbagai kegiatan
+                    organisasi dan kemahasiswaan.
+                </p>
+
+            </div>
+
+
+            <div class="achievement reveal">
+
+                <div class="achievement-number">
+                    10+
+                </div>
+
+                <h3>
+                    Kegiatan
+                </h3>
+
+                <p>
+                    Kegiatan akademik, sosial,
+                    maupun kepanitiaan yang diikuti.
+                </p>
+
+            </div>
+
+
+            <div class="achievement reveal">
+
+                <div class="achievement-number">
+                    100%
+                </div>
+
+                <h3>
+                    Semangat Belajar
+                </h3>
+
+                <p>
+                    Terus belajar dan mengembangkan
+                    kemampuan untuk masa depan.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <small>
+                PENDIDIKAN
+            </small>
+
+            <h2>
+                Pendidikan Saya
+            </h2>
+
+            <p>
+                Perjalanan pendidikan dan proses belajar.
+            </p>
+
+        </div>
+
+
+        <div class="education">
+
+
+            <div class="education-card reveal">
+
+                <small>
+                    2026 — Sekarang
+                </small>
+
+                <h3>
+                    Politeknik Negeri Pontianak
+                </h3>
+
+                <p>
+                    Program Studi Administrasi Negara
+                </p>
+
+                <br>
+
+                <p>
+                    Fokus mempelajari administrasi publik,
+                    pemerintahan, kebijakan publik,
+                    organisasi, dan pelayanan masyarakat.
+                </p>
+
+            </div>
+
+
+            <div class="education-card reveal">
+
+                <small>
+                    2023 — 2026
+                </small>
+
+                <h3>
+                    SMKN 1 Semparuk
+                </h3>
+
+                <p>
+                    Rekayasa Perangkat Lunak
+                </p>
+
+                <br>
+
+                <p>
+                    Masa pembentukan dasar akademik,
+                    organisasi, komunikasi, dan
+                    pengembangan karakter.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact reveal">
+
+            <h2>
+                Mari Terhubung
+            </h2>
+
+            <p>
+                Saya terbuka untuk berdiskusi, berkolaborasi,
+                bertukar pengalaman, maupun terlibat dalam
+                kegiatan positif bersama.
+            </p>
+
+
+            <div class="contact-links">
+
+                <a
+                    class="contact-link"
+                    href="mailto:syahadireivan@gmail.com">
+
+                    ✉️ Email
+
+                </a>
+
+
+                <a
+                    class="contact-link"
+                    href="https://www.instagram.com/vnsyhdi299"
+                    target="_blank">
+
+                    📸 Instagram
+
+                </a>
+
+
+                <a
+                    class="contact-link"
+                    href="https://wa.me/6281528828696"
+                    target="_blank">
+
+                    💬 WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © <span id="year"></span> Reivan.
+    Personal Portfolio — Administrasi Negara.
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* MOBILE MENU */
+
+    function toggleMenu() {
+
+        const nav =
+            document.getElementById("navLinks");
+
+        nav.classList.toggle("active");
+
+    }
+
+
+    /* CLOSE MENU AFTER CLICK */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+
+    /* SCROLL REVEAL */
+
+    function reveal() {
+
+        const elements =
+            document.querySelectorAll(".reveal");
+
+        elements.forEach(element => {
+
+            const position =
+                element.getBoundingClientRect().top;
+
+            const screen =
+                window.innerHeight;
+
+            if (position < screen - 80) {
+
+                element.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+    window.addEventListener(
+        "scroll",
+        reveal
+    );
+
+    reveal();
+
+
+    /* YEAR */
+
+    document.getElementById("year")
+        .textContent =
+        new Date().getFullYear();
+
+</script>
+
+
+</body>
+</html>
+
